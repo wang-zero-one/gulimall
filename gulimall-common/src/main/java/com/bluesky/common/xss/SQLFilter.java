@@ -8,7 +8,8 @@
 
 package com.bluesky.common.xss;
 
-import io.renren.common.exception.RRException;
+
+import com.bluesky.common.utils.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**
