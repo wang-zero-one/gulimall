@@ -25,3 +25,7 @@ libraries
 .idea
 *.iml
 target
+.mvn
+*.cmd
+mvnw
+.gitignore
