@@ -1,6 +1,7 @@
 package com.bluesky.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,13 +32,13 @@ public class CategoryController {
     private CategoryService categoryService;
 
     /**
-     * 列表
+     * 查出所有分类以及子分类，以树形结构返回
      */
-    @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
+    @RequestMapping("/list/tree")
+    public R list(){
+        List<CategoryEntity> entities = categoryService.listWithTree();
 
-        return R.ok().put("page", page);
+        return R.ok().put("data", entities);
     }
 
 
@@ -73,6 +74,8 @@ public class CategoryController {
 
     /**
      * 删除
+     * RequestBody 获取请求体，只有post请求才会有请求体
+     * springmvc 自动将请求体的数据（Json）,转换为对象
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds){
