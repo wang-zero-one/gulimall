@@ -19,3 +19,10 @@
 #
 #server:
 #  port: 10000
+spring:
+  cloud:
+    alicloud:
+      access-key: LTAI5tKxRGqCga2UhqJuE5wc
+      secret-key: 1f48GgnIpKb4wudHfY95fLhqt2vh3k
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
